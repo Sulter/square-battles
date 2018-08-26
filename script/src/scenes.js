@@ -28,7 +28,7 @@ Crafty.scene('Main_menu', function() {
   Crafty.e("2D, Canvas, Text").attr({ x: 10, y: 50 }).text("Duplicator - can duplicate himself");
   Crafty.e("2D, Canvas, Text").attr({ x: 10, y: 70 }).text("Exploder - explodes with contact on anything");
   Crafty.e("2D, Canvas, Text").attr({ x: 10, y: 90 }).text("Runner - fast unit, that simply runs for the base. Low HP");
-  Crafty.e("2D, Canvas, Text").attr({ x: 10, y: 110 }).text("Your caste - defend it");
+  Crafty.e("2D, Canvas, Text").attr({ x: 10, y: 110 }).text("Your caslte - defend it");
   Crafty.e("2D, Canvas, Text").attr({ x: 10, y: 200 }).text("Enemy warp gate - units spawn here");
 });
  
