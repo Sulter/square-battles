@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <script src="script/lib/box2dWeb2.1.a.3.js"></script>
+  <script src="script/lib/crafty.js"></script>
+  <script src="script/lib/box2d.js"></script>
+  <script src="script/lib/a_star.js"></script>
+  
+  <script src="script/src/game.js"></script>
+  <script src="script/src/components.js"></script>
+  <script src="script/src/scenes.js"></script>
+  <script src="script/src/units.js"></script>
+  <script src="script/src/units_sword.js"></script>
+  <script src="script/src/units_archer.js"></script>
+  <script src="script/src/units_runner.js"></script>
+  <script src="script/src/units_exploder.js"></script>
+  <script src="script/src/units_duplicator.js"></script>
+  <script src="script/src/buildings.js"></script>  
+
+
+	   <script>
+	-  /*
+	-  ******TODO********
+currently working on making teleporter placable, the icon is there, but 
+how the waves are handled should probably be changed totaly. or at least diabled 
+as long as clicking on spawner makes new enemy spawn.
+
+
+	-  FEATURES:
+	-  queue for unit spawning
+	-  use more physics and box2d in general.
+	-  add "error" to each arrow shot
+	-  catapult - it's a unit. When you "toggle it" (click on it) it will point in direction of your mouse (it will turn slowly),. 
+	-  particles on hit (make a particle factory component)
+	-  
+	-  
+	-  CLEAN UP/GAMEPLAY FIX:
+	-  ALL ENTITIES - NO MATTER WHAT IT IS.should have the remove_me function, except well things that can't be destroyed!
+	-  when the mobs got damage - recalc the A* route, because they propably got hit out of it.
+	-  change mass of units, so a runner won't be able to easliy move around a sword etc.
+	-  rewrite the "following" algo, to use the same type as the one found by the pathfinder, so we don't have to copy the over, also do the same thing with the occupied[][]
+	-  make a global game.SCALE variable, instead of using "30" everywhere. otherwise I think craft.box2d.scale works.
+	-  ^units(si units that is, it shouldn't be 30, but propably more, so the items won't be all that small)
+	-  for now only friendly can damage enemys by charging into them. remember to change if enemies ever get to attack.
+	-  
+	-  BUGS:
+        waves sometimes get stuck, no more enemies spawning. Probably the counter
+        the black rectangle thing that shows where you are building, is not getting deleted.
+        in firefox, the drag-it rectangle stays, probably because the value of mouse element I use in the"menu" component doesn't change like it does in chrome
+	-  units-swords, should get a A* path to the enemy, instead of a simple coords, because of corners etc.  
+	-  when units die, all the arrows welded to them should dissapear too. (get jointlist, and then just use the body.userdata to find the craty entities needing destryoing - aka. arrows) 
+	-  take care of the size of the window (phones etc). propably EVERYTHING need to get scaled for 1:1 experience  
+	-  
+	-  OPTIMIZE:
+	-  all the inline function .something(function(){do something}) should be just giving referances to functions instead. that is quicker
+	-  maybe save the angle from last frame, and only recalc (using cos/sin), if the angle of the body have changed more then x.
+	-  remember to simply raycast first, before actually doing A*. maybe even better - make a path until first collision with a wall, and then A* from that point to goal
+	-  all the additional tiles should be made to one solid?
+	-  smaller world- units slower?
+    -  just one background, instead of hundredes of tiles.
+	-  
+	-  
+	-  game description:
+	- future idea: defend your castle against invading foes, by placing suicide bombers units/archers/sword fighters/tanky units/traps/walls etc... you have a "build time" where you can place units/building (each unit also have a limited line of sight/attack/charge). So archers will have longer line of view and won't charge the enemy, while soldiers will. Also, physics LEL XDXDXD. Each thing will cost gold to create which you gain each level etc.
+	-  upgrades units/buildings, but no levels? Just see how many waves you can withstand.easy/normal/hard?
+	-  */
+	-    
+  
+    //start the game
+    window.addEventListener('load', Game.start);
+  </script>
+</head>
+<body>
+</body>
+</html>
